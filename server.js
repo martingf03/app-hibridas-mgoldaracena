@@ -6,24 +6,16 @@ const server = http.createServer((request, response) => {
 
     if (request.url == "/") {
         response.write(`<p>Martín Goldaracena</p>`);
-    }
-
-    if (request.url == "/materia") {
+    } else if (request.url == "/materia") {
         response.write(`<p>Aplicaciones Híbridas</p>`);
         response.write(`<p>26-1</p>`);
         response.write(`<p>DWN4AV</p>`);
-    }
-
-    if (request.url == "/profesor") {
+    } else if (request.url == "/profesor") {
         response.write(`<p>Victor Villafañe</p>`);
-    }
-
-    if (request.url == "/otra") {
-        response.write(`<p>Página no encontrada</p>`);
-    }
-
-    if (request.url == "/productos") {
+    } else if (request.url == "/productos") {
         response.write(`<table><tr><th>ID</th><th>Nombre</th><th>Precio</th></tr><tr><td>1</td><td>Café Expreso</td><td>200</td></tr><tr><td>2</td><td>Café Americano</td><td>250</td></tr><tr><td>3</td><td>Café Cortado</td><td>200</td></tr><tr><td>4</td><td>Café Doble</td><td>250</td></tr><tr><td>5</td><td>Café Lágrima</td><td>200</td></tr></table>`);
+    } else {
+        response.write(`<p>Página no encontrada</p>`);
     }
 
     response.end(`</main></body></html>`);
